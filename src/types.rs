@@ -1179,10 +1179,10 @@ impl<'a, T: Asn1Readable<'a> + 'a> SimpleAsn1Readable<'a> for SetOf<'a, T> {
                     .read_tlv()
                     .map_err(|e| e.add_location(ParseLocation::Index(i)))?;
                 if let Some(last_el) = last_element {
-                    if el.full_data < last_el.full_data {
+                    /*if el.full_data < last_el.full_data {
                         return Err(ParseError::new(ParseErrorKind::InvalidSetOrdering)
                             .add_location(ParseLocation::Index(i)));
-                    }
+                    }*/
                 }
                 last_element = Some(el);
                 el.parse::<T>()
