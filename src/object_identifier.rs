@@ -18,8 +18,8 @@ const MAX_OID_LENGTH: usize = 63;
 #[derive(Debug, PartialEq, Eq, Clone, Hash)]
 pub struct ObjectIdentifier {
     // Store the OID as DER encoded.
-    der_encoded: [u8; MAX_OID_LENGTH],
-    der_encoded_len: u8,
+    pub der_encoded: [u8; MAX_OID_LENGTH],
+    pub der_encoded_len: u8,
 }
 
 fn _read_base128_int<I: Iterator<Item = u8>>(mut reader: I) -> ParseResult<u32> {
