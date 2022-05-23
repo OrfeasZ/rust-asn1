@@ -1280,7 +1280,7 @@ impl<'a, T: Asn1Writable<'a>, V: Borrow<[T]>> SimpleAsn1Writable<'a> for SetOfWr
 #[cfg(feature = "const-generics")]
 #[derive(PartialEq, Debug)]
 pub struct Implicit<'a, T, const TAG: u8> {
-    inner: T,
+    pub inner: T,
     _lifetime: PhantomData<&'a ()>,
 }
 
@@ -1335,7 +1335,7 @@ impl<'a, T: SimpleAsn1Writable<'a>, const TAG: u8> SimpleAsn1Writable<'a>
 #[cfg(feature = "const-generics")]
 #[derive(PartialEq, Debug)]
 pub struct Explicit<'a, T, const TAG: u8> {
-    inner: T,
+    pub inner: T,
     _lifetime: PhantomData<&'a ()>,
 }
 
